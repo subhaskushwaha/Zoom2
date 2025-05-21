@@ -7,12 +7,14 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "prod": "pm2 src/server.js"
+    "prod": "pm2 src/server.js",
+    "build": "echo 'Build step'"
   },
   "author": "apnacollege",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
+    "brcypt": "^1.0.1",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "express": "^4.21.2",

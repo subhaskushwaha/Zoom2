@@ -12,6 +12,7 @@ import userRoutes from "./routes/users.routes.js";
 const app = express();
 const server = createServer(app);
 const io = connectToSocket(server);
+
 app.set("port", (process.env.PORT || 8000))
 app.use(cors());
 app.use(express.json({ limit: "40kb" }));
@@ -21,7 +22,7 @@ app.use("/api/v1/users", userRoutes);
 
 const start = async () => {
     app.set("mongo_user")
-   const connectionDb = await mongoose.connect("mongodb+srv://subhaskushwahak:subhas%40626573@cluster0.sk4qpn3.mongodb.net/");
+   const connectionDb = await mongoose.connect("mongodb+srv://subhaskushwahak:subhas%40626573@cluster0.sk4qpn3.mongodb.net/YOUR_DB_NAME?retryWrites=true&w=majority",);
     console.log(`MONGO Connected DB HOst: ${connectionDb.connection.host}`)
     server.listen(app.get("port"), () => {
         console.log("LISTENIN ON PORT 8000")
